@@ -4,9 +4,30 @@ RSpec is a behavior-driven development (BDD) framework for the Ruby programming 
 
 RSpec by default provides a handful of matchers that can help you test your code. Matchers are sets of expressions which are used to compare between actual and expected values. The actual value is what is returned from the written code while the expected value is the value that satisfies the condition in the matcher.
 
-Sometimes you may want to express your domain clearly using custom matchers. Here are some default matchers:
+### Why write your own matchers
 
-### Examples of Default Matchers
+Sometimes you might hve written your code and you could not find a straightforward matcher to test it. An example is in Rails Application when you like to test if a model class ```User``` has many ```Microposts``` i.e 
+
+```ruby
+class User < ActiveRecord::Base
+  has_many :microposts
+  ...
+end
+```
+
+In your tests you may have to first create a new instance of a ```user``` using ```user = User.create(*args)``` and test if ```user.microposts``` exists. So for every other model class relations, say tens or hundreds of them, you have to continue this way. Hey!
+
+You could abstract this in a matcher and write simple one-liner tests as you can find in [shoulda_matchers](https://github.com/thoughtbot/shoulda-matchers). Thus, you have DRY tests that strongly describe the behaviour of your code.
+
+Afterwards your tests may read simply
+
+```ruby
+
+  it { should have_many :microposts }
+
+```
+
+### Examples of Default Matchers in RSpec
 
 ####  1. Equality
         expect(actual).to eq(expected)
