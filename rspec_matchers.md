@@ -138,4 +138,4 @@ Open the ```.rspec``` in your ```rspec_matchers``` directory. You should find th
 We can do more of this next time. At the moment, enjoy your tests.
 
 
-Check the test  code on [github](https://github.com/andela-ydaniju/rspec_matchers)
+Check the test  code on [github](https://github.com/danijuyusuf/rspec_matchers)
