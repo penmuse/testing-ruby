@@ -6,7 +6,7 @@ RSpec by default provides a handful of matchers that can help you test your code
 
 ### Why write your own matchers
 
-Sometimes you might hve written your code and you could not find a straightforward matcher to test it. An example is in Rails Application when you like to test if a model class ```User``` has many ```Microposts``` i.e 
+Sometimes you might have written your code and could not find a straightforward matcher to test it. An example is in Rails Application when you like to test if a model class ```User``` has many ```Microposts``` i.e 
 
 ```ruby
 class User < ActiveRecord::Base
